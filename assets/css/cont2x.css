@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+@import url("continuous_base.css");
+@media print {
+ #barcodes #barcode-list{
+ }
+ #barcodes #barcode-list .barcode {
+  width: 50%;
+  text-align: center;
+  page-break-inside: avoid;
+  height: 60px;
+  float: left;
+ }
+
+ /* Force a page break after (2 x 1 = 2) labels (x2 = 4 because there are .barcode and .page-break elements),
+    just in case the browser disagrees with us on the math. */
+ .page-break:nth-child(4n + 4) {
+  display: block;
+  clear: left;
+  page-break-after: always;
+ }
+}
+@media screen {
+ #barcodes #barcode-list .barcode {
+  width: 120px;
+   height: 60px;
+  float: left;
+  border-bottom: 1px solid grey;
+ }
+}
+
+#barcodes #barcode-list .barcode img {
+ min-height: 30px;
+ max-height: 80%;
+ max-width: 100%;
+ margin: auto;
+
+}
+
+.barcode .name {
+ text-align: left;
+ float: left;
+ font-size: 0.8em;
+ padding: 0 0;
+ line-height: 1.1em;
+ width: 100%;
+}
+
+.barcode .price {
+ text-align: right;
+ float: right;
+ font-size: 1.0em;
+ padding: 5px 0 0 10px;
+ width: auto;
+}
