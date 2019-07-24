@@ -13,7 +13,7 @@
 
   /* Force a page break after (2 x 1 = 2) labels (x2 = 4 because there are .barcode and .page-break elements),
     just in case the browser disagrees with us on the math. */
-  .page-break:nth-child(4n + 4) {
+  .page-break:nth-child(2n + 2) {
     display: block;
     clear: left;
     page-break-after: always;
